@@ -1,12 +1,14 @@
 # WEEK1 DAY2 postgresql
 
-## COMMAND
+## FUNCTIONS
   - WHERE
   - HAVING
   - COUNT
   - SUM
   - GROUP BY
   - LIKE
+  - MIN
+  - MAX
 
 # SELECT data
 ```
