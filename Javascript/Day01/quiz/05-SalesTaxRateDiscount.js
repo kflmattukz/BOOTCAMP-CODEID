@@ -4,7 +4,22 @@
   */
 
  function getSalesDiscount(price,tax,discount){
+    if(isNaN(price)) return 'Price harus dalam angka'
+    if(isNaN(tax)) return 'Pajak harus dalam angka'
+    if(isNaN(price) && isNaN(tax) && isNaN(discount)) return 'Price, Tax & Discount harus dalam angkaa'
+    
+    const totalDisoount = price * (discount / 100)
+    const priceAfterDiscount = price - totalDisoount
+    const pajakAfterDiscount = priceAfterDiscount * (tax / 100)
 
+    return `
+    Total Sales     : Rp.${price}
+    Discount (5%) 	: Rp.${ totalDisoount }
+    PriceAfterDiscount 	: Rp.${priceAfterDiscount}
+    Pajak (10%) 	: Rp.${pajakAfterDiscount}
+    ----------------------------------
+    TotalPayment 	: Rp.${priceAfterDiscount + pajakAfterDiscount}
+    `
  }
 
 console.log(getSalesDiscount("a", 1,5));//Price harus dalam angka

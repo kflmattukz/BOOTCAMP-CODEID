@@ -6,7 +6,12 @@
  */
 
 function calculateDistance(a, t){
-
+  if(typeof a !== 'number' && typeof t !== 'number') {
+    return 'input must an number'
+  } else if (a <= 0 || t <= 0) {
+    return 'Accelaration or time must be >= 0'
+  } 
+  return `Jarak yang ditempuh adalah ${ 0.5 * a * Math.pow(t,2) } meter/s`
 }
 
 console.log(calculateDistance("a","t"));//input must an number

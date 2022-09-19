@@ -7,7 +7,12 @@
  */
 
 function getAreaCircle(r) {
-
+  if (r <= 0) {
+    return 'try higher'
+  } else if (typeof r !== 'number') {
+    return 'Inputan harus dalam angka'
+  }
+  return (Math.PI * r * r).toFixed(5)
 }
 
 

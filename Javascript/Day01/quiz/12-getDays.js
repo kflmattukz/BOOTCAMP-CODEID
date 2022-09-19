@@ -1,7 +1,16 @@
 /** Display year is kabisat and display month */
 
 function getDays(month,year){
-    
+  if(isNaN(month) && isNaN(year)) 'inputan bulan & tahun harus dalam integer'
+  if(isNaN(month)) return 'inputan bulan harus dalam integer'
+  if(isNaN(year)) return 'inputan tahun harus dalam integer'
+  
+  const d = new Date(year, month, 0).getDate();
+    if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
+        return `This month has ${d} days, ${year} adalah tahun kabisat`;
+    } else {
+        return `This month has ${d} hari`;
+    }
 }
 
 console.log(getDays("a",2021)); //inputan bulan harus dalam integer
