@@ -7,10 +7,6 @@ function getDays(month,year){
   
   const d = new Date(year, month, 0).getDate();
   
-  //console.log(new Date(year, month, 0).toLocaleDateString())
-  //console.log(d)
-  //console.log(0 == year % 4 ,0 != year % 100 ,0 == year % 400)
-  
     if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
         return `This month has ${d} days, ${year} adalah tahun kabisat`;
     } else {
