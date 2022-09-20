@@ -7,6 +7,7 @@ function howManyKabisat(year1,year2){
   let totalTahunNonKabisat = 0
   let arrKabisat = []
   let arrNotKabisat = []
+
   while(year1 <= year2) {
     if (isKabisat(year1)) {
       // console.log(year1 + ' adalah tahun kabisat')

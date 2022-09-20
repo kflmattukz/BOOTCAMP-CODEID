@@ -9,13 +9,9 @@ function isCharsUnique(string){
   
   for (let i = 0; i < arrChars.length; i++) {
     for (let j = 0; j < arrChars.length; j++) {
-      if (i == j) {
-        continue;
-      }
+      if (i == j) continue
       //console.log(arrChars[i], arrChars[j])
-      if(arrChars[i] === arrChars[j]) {
-        isUniq =  false
-      }
+      if(arrChars[i] === arrChars[j]) isUniq = false
     }
   }
   return isUniq

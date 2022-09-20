@@ -4,7 +4,7 @@ function isPalindrome(word){
   let wordReverse = word.reverse() // bali array untuk perbandingan dari belakang
 
   if(word.join('') === wordReverse.join('')) return true // array di join dan di bandingan jika true return true
-
+  
   return false
 }
 
