@@ -3,11 +3,10 @@
  *  inputan s = bulan/hari/tahun
 */
 function strToDate(s){
-  // if (isNaN(Date.parse(s))) return  s + ' bad format date'; 
+  // parse inputan tanggal menjadi milisekon dan di validasi menggunanakn isNaN 
+  if (isNaN(Date.parse(s))) return  s + ' bad format date'; 
   // console.log(split_date)
-  if (isNaN(Date.parse(s))) {
-    return  s + ' bad format date';
-  }
+
   let [month,day,year] = s.split("/")
   // date = new Date(s)
   date = new Date(year,month -1 ,day); // -1 karna Date menggunakan 0 index base
