@@ -23,8 +23,8 @@ export default class Product{
         return (this.subTotal() * discount) / 100
     }
 
-    getFormatPrice(amount , currency) {
-        return new Intl.NumberFormat('ID', {style:'currency', currency: currency}).format(amount)
+    getFormatPrice() {
+        return new Intl.NumberFormat('ID', {style:'currency', currency: 'IDR'}).format(this.price)
     }
 
     toString(){
@@ -32,7 +32,7 @@ export default class Product{
         Prod ID     : ${this.prodId}
         Prod Name   : ${this.prodName}
         Category    : ${this.category}
-        Price       : ${this.getFormatPrice(this.price, 'IDR')} 
+        Price       : ${this.getFormatPrice()} 
         Total Buy   : ${this.totalBuy}
         `
     }
