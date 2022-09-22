@@ -6,14 +6,23 @@ const prod3 = new Product(3, "Mesin Cuci LG", "ELECTRONIC", 3500000, 1);
 const prod4 = new Product(4, "IPHONE", "HP", 6000000, 2);
 const prod5 = new Product(5, "Asus Laptop", "COMPUTER", 6500000, 4);
 
-let listCart = [];
+let listCart = [prod1,prod2,prod3,prod4,prod5];
 
-
-const totalTagihan = listCart.reduce((sum, el) => sum + el.subTotal, 0)
-console.log(`Total Tagihan =${totalTagihan}`);//Total Tagihan =64700000
+//console.log(prod1.price,prod1.totalBuy)
+const totalTagihan = listCart.reduce((sum, acc) => sum + acc.subTotal(), 0)
+// console.log(`Total Tagihan = ${totalTagihan}`);//Total Tagihan =64700000
+console.log(`Total Tagihan = ${formatToRupiah(totalTagihan, 'IDR')}`);//Total Tagihan =64700000
 
 const totalTagihanDiscount = (discount) => {
-
+  // return totalTagihan - listCart.reduce((sum, acc) => sum + acc.getDiscount(discount),0)
+  // console.log((totalTagihan / discount) * 100)
+  return totalTagihan - ((totalTagihan * discount) / 100)
 }
+console.log(`Total Tagihan discount= ${formatToRupiah(totalTagihanDiscount(10), 'IDR')}`);//Total Tagihan discount=58580000 ? 58230000
 
-console.log(`Total Tagihan discount=${totalTagihanDiscount(10)}`);//Total Tagihan discount=58580000
+console.log(listCart.map(product => product.toString()).join(''))
+
+// Format currency IDR 'Indonesian Rupiah'
+function formatToRupiah(amount, currency) {
+  return new Intl.NumberFormat('ID', {style:'currency', currency: currency}).format(amount)
+}
